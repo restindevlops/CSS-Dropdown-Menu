@@ -24,8 +24,16 @@ body{
     z-index: 10000;
     border-radius: 4px;
     overflow: hidden;
+    transition: width 0.5s, height 0.5s;
+    transition-delay : 0s,0.75s;
 }
 
+.navigation.active{
+
+    width: 250px;
+    height: 350px;
+
+}
 .navigation .menuToggle{
 
     position: relative;
@@ -41,8 +49,13 @@ body{
     cursor: pointer;
 }
 
+.navigation .menuToggle.active{
+
+    background:#2196f3;
+}
+
 .navigation .menuToggle::before{
-    
+
     content:'+';
     position: absolute;
     font-size : 2em;
@@ -54,4 +67,9 @@ body{
     height:50px;
     font-weight: 400;
     transition: 0.5s;
+}
+
+.navigation .menuToggle.active::before{
+    
+    transform: rotate(315deg)
 }
